@@ -8,9 +8,9 @@ import PatternCircles from "../../../public/Home/pattern-circles.svg"
 import Link from "next/link"
 
 type ProductLinkProps = {
-  firstProduct: ProductType | undefined
-  secondProduct: ProductType | undefined
-  thirdProduct: ProductType | undefined
+  firstProduct: ProductType
+  secondProduct: ProductType
+  thirdProduct: ProductType
 }
 
 const ProductLinks: React.FC<ProductLinkProps> = (props: {

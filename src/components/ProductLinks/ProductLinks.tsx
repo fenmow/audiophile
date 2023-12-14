@@ -7,10 +7,16 @@ import { ProductType } from "@/services/products"
 import PatternCircles from "../../../public/Home/pattern-circles.svg"
 import Link from "next/link"
 
-const ProductLinks: React.FC = (props: {
-  firstProduct?: ProductType | undefined
-  secondProduct?: ProductType | undefined
-  thirdProduct?: ProductType | undefined
+type ProductLinkProps = {
+  firstProduct: ProductType | undefined
+  secondProduct: ProductType | undefined
+  thirdProduct: ProductType | undefined
+}
+
+const ProductLinks: React.FC<ProductLinkProps> = (props: {
+  firstProduct?: ProductType
+  secondProduct?: ProductType
+  thirdProduct?: ProductType
 }) => {
   return (
     <section className={Style.product_links}>

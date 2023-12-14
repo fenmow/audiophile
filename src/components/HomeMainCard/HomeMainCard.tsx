@@ -1,15 +1,14 @@
 import Link from "next/link"
 import Style from "./HomeMainCard.module.scss"
-import ImageHero from "public/Home/image-hero.jpg"
 
 type HomeMainCardProps = {
-  productName: string
-  slug: string
+  productName: string | undefined
+  slug: string | undefined
 }
 
 const HomeMainCard: React.FC<HomeMainCardProps> = (props: {
-  productName: string
-  slug: string
+  productName?: string | undefined
+  slug?: string | undefined
 }) => {
 
   return (

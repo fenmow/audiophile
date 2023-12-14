@@ -3,13 +3,13 @@ import Style from "./HomeMainCard.module.scss"
 import ImageHero from "public/Home/image-hero.jpg"
 
 type HomeMainCardProps = {
-  productName: string | undefined
-  slug: string | undefined
+  productName: string
+  slug: string
 }
 
 const HomeMainCard: React.FC<HomeMainCardProps> = (props: {
-  productName: string | undefined
-  slug: string | undefined
+  productName: string
+  slug: string
 }) => {
 
   return (

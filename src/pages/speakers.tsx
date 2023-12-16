@@ -10,6 +10,7 @@ import Style from "../styles/ProductsPage.module.scss"
 export const getStaticProps: GetStaticProps = async () => {
   const products = await fetchProducts()
   const speakers = products.filter(product => product.category === 'speakers')
+  speakers.reverse()
 
   return { props: { speakers } }
 }

@@ -18,13 +18,13 @@ const Header: React.FC = () => {
           <Link href="/" legacyBehavior>
             <a className={Style.nav_link}>home</a>
           </Link>
-          <Link href="/" legacyBehavior>
+          <Link href="/headphones" legacyBehavior>
             <a className={Style.nav_link}>headphones</a>
           </Link>
-          <Link href="/" legacyBehavior>
+          <Link href="/speakers" legacyBehavior>
             <a className={Style.nav_link}>speakers</a>
           </Link>
-          <Link href="/" legacyBehavior>
+          <Link href="/earphones" legacyBehavior>
             <a className={Style.nav_link}>earphones</a>
           </Link>
         </nav>

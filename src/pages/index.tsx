@@ -1,5 +1,6 @@
 import AudioGear from "@/components/AudioGear/AudioGear";
 import CategoryRow from "@/components/CategoryRow/CategoryRow";
+import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import HomeMainCard from "@/components/HomeMainCard/HomeMainCard";
 import ProductLinks from "@/components/ProductLinks/ProductLinks";
@@ -27,6 +28,7 @@ const Home: NextPage = (props: {
       <CategoryRow />
       <ProductLinks firstProduct={zx9} secondProduct={zx7} thirdProduct={yx1} />
       <AudioGear />
+      <Footer />
     </>
   )
 }

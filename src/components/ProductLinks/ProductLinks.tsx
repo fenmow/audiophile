@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Style from "./ProductLinks.module.scss"
-import SpeakerImage from "../../../public/Home/image-speaker-zx9.png"
-import Zx7Image from "../../../public/Home/image-speaker-zx7.jpg"
-import EarphoneImage from "public/Home/image-earphones-yx1.jpg"
+import SpeakerImage from "public/home/desktop/image-speaker-zx9.png"
+import Zx7Image from "public/home/desktop/image-speaker-zx7.jpg"
+import EarphoneImage from "public/home/desktop/image-earphones-yx1.jpg"
 import { ProductType } from "@/services/products"
-import PatternCircles from "../../../public/Home/pattern-circles.svg"
+import PatternCircles from "public/home/desktop/pattern-circles.svg"
 import Link from "next/link"
 
 type ProductLinkProps = {
@@ -29,7 +29,7 @@ const ProductLinks: React.FC<ProductLinkProps> = (props: {
           <div className={Style.text_content}>
             <h1>{props.firstProduct?.name}</h1>
             <p>Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-            <Link href={`/products/${props.firstProduct?.slug.toString()}`}>
+            <Link href={`/${props.firstProduct?.slug.toString()}`}>
               <button>see product</button>
             </Link>
           </div>
@@ -37,7 +37,7 @@ const ProductLinks: React.FC<ProductLinkProps> = (props: {
         <div className={`${Style.product_row} ${Style.second_product}`} style={{ backgroundImage: `url(${Zx7Image.src})` }}>
           <div className={Style.text_content}>
             <h1>{props.secondProduct?.name}</h1>
-            <Link href={`/products/${props.secondProduct?.slug.toString()}`}>
+            <Link href={`/${props.secondProduct?.slug.toString()}`}>
                 <button>see product</button>
             </Link>
           </div>
@@ -48,7 +48,7 @@ const ProductLinks: React.FC<ProductLinkProps> = (props: {
           </div>
           <div className={Style.text_content}>
             <h1>{props.thirdProduct?.name}</h1>
-            <Link href={`/products/${props.secondProduct?.slug.toString()}`}>
+            <Link href={`/${props.secondProduct?.slug.toString()}`}>
                 <button>see product</button>
             </Link>
           </div>

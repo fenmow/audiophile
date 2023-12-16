@@ -1,3 +1,5 @@
+import { StaticImport } from "next/dist/shared/lib/get-img-props"
+
 type includeType = {
   quantity: number
   item: string

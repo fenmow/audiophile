@@ -1,7 +1,7 @@
 .main_card {
   width: 100%;
   padding: 0 1.75em;
-  background: url('../../../public/Home/image-hero.jpg');
+  background: url('../../../public/home/desktop/image-hero.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,7 +58,7 @@
 
 @media only screen and (max-width: 1024px) {
   .main_card {
-    background: url('../../../public/Home/image-hero-tablet.jpg');
+    background: url('../../../public/home/tablet/image-header-tablet.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

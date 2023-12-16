@@ -1,0 +1,22 @@
+.icons_row {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  font-size: 28px;
+  gap: .75em;
+  span {
+    display: flex;
+    color: #ffff;
+    &:hover {
+      color: #d87d4a;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .icons_row {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

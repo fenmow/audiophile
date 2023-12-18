@@ -7,8 +7,8 @@ type HomeMainCardProps = {
 }
 
 const HomeMainCard: React.FC<HomeMainCardProps> = (props: {
-  productName?: string | undefined
-  slug?: string | undefined
+  productName: string | undefined
+  slug: string | undefined
 }) => {
 
   return (

@@ -10,7 +10,7 @@
   height: 100%;
   min-height: 90.7vh;
   background-color: #cfcfcf4f;
-  padding-top: 50px;
+  padding: 50px 0 140px 0;
   .back_link_container {
     width: 100%;
     padding: 0 1.75em;
@@ -21,6 +21,9 @@
       .back_link_content {
         text-decoration: none;
         color: #000000a4;
+        &:hover {
+          color: #D87D4A;
+        }
       }
     }
   }
@@ -34,6 +37,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 380px;
+      align-items: start;
       gap: 2em;
       .checkout_main_grid,
       .summary {
@@ -84,6 +88,106 @@
         padding: 2.25em;
         h1 {
           font-size: 29px;
+        }
+        .checkout_form {
+          h2 {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #D87D4A;
+          }
+          .input_grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25em;
+            margin: 12px 0 55px 0;
+            .input_container {
+              width: 100%;
+              .message_container {
+                label {
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #000000;
+                }
+              }
+                input {
+                  width: 100%;
+                  margin-top: 8px;
+                  border: 1px solid rgba(0, 0, 0, 0.205);
+                  padding: 1.25em 1.5em;
+                  border-radius: .6em;
+                  caret-color: #D87D4A;
+                  font-size: 15px;
+                  font-weight: bold;
+                  &::placeholder {
+                    font-size: 15px;
+                    font-weight: bold;
+                    color: #00000064;
+                  }
+                  &:focus {
+                    outline: 2px solid #D87D4A;
+                  }
+                }
+            }
+            .address_input {
+              grid-column: span 2;
+            }
+          }
+
+
+          .payment_methods_container {
+            margin: 15px 0 0 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: start;
+            gap: 1.5em;
+            h3 {
+              font-size: 14px;
+            }
+            .payment_methods {
+              display: flex;
+              flex-direction: column;
+              .payment_method {
+                padding: 1em;
+                width: 100%;
+                border: 1px solid rgba(0, 0, 0, 0.205);
+                border-radius: .6em;
+                margin-bottom: 14px;
+                display: flex;
+                align-items: center;
+                gap: 1.25em;
+                input[type="radio"] {
+                  accent-color: #D87D4A;
+                }
+                label {
+                  font-weight: bold;
+                  user-select: none;
+                }
+              }
+              .payment_method:focus-within {
+                outline: 2px solid #D87D4A !important;
+              }
+            }
+          }
+          
+          .emoney_container {
+            margin: 12px 0 15px 0;
+          }
+
+          .cash_container {
+            margin: 18px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            .text_content {
+              p {
+                color: #00000064;
+                font-weight: bold;
+                line-height: 1.65em;
+              }
+            }
+          }
         }
       }
 

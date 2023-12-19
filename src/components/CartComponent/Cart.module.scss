@@ -1,0 +1,101 @@
+.cart_container {
+  width: 100%;
+  max-width: 450px;
+  padding: 0 1.7em;
+  position: absolute;
+  top: 130%;
+  right: 0%;
+  z-index: 150;
+  .cart {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 1.5em;
+    border-radius: .4em;
+    .title_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      h1 {
+        font-size: 19px;
+        text-transform: uppercase;
+        color: #000000;
+      }
+      span {
+        font-size: 14px;
+        color: #00000092;
+        border-bottom: 1px solid #00000010;
+        line-height: .9em;
+        user-select: none;
+        cursor: pointer;
+        &:hover {
+          color: #D87D4A;
+          border-bottom: 1px solid #d87e4a97;
+        }
+      }
+    }
+
+    .product_row {
+      margin: 5px 0 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .product_details {
+        display: flex;
+        gap: .8em;
+        .image {
+          border-radius: .4em;
+        }
+        .product_content {
+          padding-top: .3em;
+          display: flex;
+          flex-direction: column;
+          gap: .2em;
+          .product_name {
+            font-size: 15px;
+            font-weight: bold;
+          }
+          .product_price {
+            font-size: 14px;
+            color: #000000a5;
+          }
+        }
+      }
+    }
+
+    .total_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-transform: uppercase;
+      margin: 30px 0 6px 0;
+      .total_title {
+        color: #0000009a;
+      }
+      .total {
+        color: #000000;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .checkout_link {
+    button {
+      width: 100%;
+      border: none;
+      background-color: #D87D4A;
+      color: #ffff;
+      text-transform: uppercase;
+      padding: 1em 1.6em;
+      letter-spacing: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 13px 0 0 0;
+      transition: .1s;
+      &:hover {
+        background-color: #FBAF85;
+      }
+    }
+  }
+}

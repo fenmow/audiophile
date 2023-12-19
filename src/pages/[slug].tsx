@@ -9,6 +9,7 @@ import { useState } from "react";
 import CategoryRow from "@/components/CategoryRow/CategoryRow";
 import AudioGear from "@/components/AudioGear/AudioGear";
 import Footer from "@/components/Footer/Footer";
+import { useCart } from "@/hooks/useCart";
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const slug = context.params?.slug
@@ -29,14 +30,20 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false }
 }
 
-const ProductPage: NextPage = (props: {
-  product?: ProductType
+type productPageType = {
+  product: ProductType
+}
+
+const ProductPage: NextPage<productPageType> = (props: {
+  product: ProductType
 }) => {
-  const [qtd, setQtd] = useState<number>(1)
+  const { addProducts } = useCart()
+  const [productsList, setProductsList] = useState<ProductType[]>([props.product!])
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
-      <Header />
+      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.header_background}></div>
 
       <div className={Style.back_link_container}>
@@ -61,8 +68,11 @@ const ProductPage: NextPage = (props: {
               <p className={Style.product_description}>{props.product?.description}</p>
               <p className={Style.product_price}>$ {props.product?.price.toLocaleString().replace('.', ',')}</p>
               <div className={Style.interaction_buttons}>
-                <AddAndRemoveBtn qtd={qtd} setQtd={setQtd} />
-                <button>add to cart</button>
+                <AddAndRemoveBtn qtd={productsList.length} setQtd={setProductsList} product={props.product!} />
+                <button onClick={() => {
+                  addProducts(productsList)
+                  setProductsList([props.product])
+                }}>add to cart</button>
               </div>
           </div>
 

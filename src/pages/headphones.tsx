@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard/ProductCard"
 import CategoryRow from "@/components/CategoryRow/CategoryRow"
 import AudioGear from "@/components/AudioGear/AudioGear"
 import Footer from "@/components/Footer/Footer"
+import { useState } from "react"
 
 export const getStaticProps: GetStaticProps = async () => {
   const products: ProductType[] = await fetchProducts()
@@ -18,9 +19,11 @@ export const getStaticProps: GetStaticProps = async () => {
 const Headphones: NextPage = (props: {
   headphones?: ProductType[]
 }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
   return (
     <>
-      <Header />
+      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.title_container}>
         <h1>headphones</h1>
       </div>

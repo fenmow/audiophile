@@ -6,6 +6,7 @@ import HomeMainCard from "@/components/HomeMainCard/HomeMainCard";
 import ProductLinks from "@/components/ProductLinks/ProductLinks";
 import { ProductType, fetchProducts } from "@/services/products";
 import { GetStaticProps, NextPage } from "next";
+import { useState } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
   const products: ProductType[] = await fetchProducts()
@@ -15,6 +16,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage = (props: {
   products?: ProductType[]
 }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   const markTwo = props.products?.find(product => product.slug === 'xx99-mark-two-headphones')
   const zx9 = props.products?.find(product => product.slug === 'zx9-speaker')
@@ -23,7 +25,7 @@ const Home: NextPage = (props: {
 
   return (
     <>
-      <Header />
+      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <HomeMainCard productName={markTwo?.name} slug={markTwo?.slug} />
       <CategoryRow />
       <ProductLinks firstProduct={zx9} secondProduct={zx7} thirdProduct={yx1} />

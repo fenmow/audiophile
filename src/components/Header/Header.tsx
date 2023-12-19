@@ -3,8 +3,18 @@ import Style from "./Header.module.scss"
 import Logo from "public/logo.svg"
 import Link from "next/link"
 import CartIcon from "../CartIcon/CartIcon"
+import Cart from "../CartComponent/Cart"
 
-const Header: React.FC = () => {
+type headerProps = {
+  menuIsOpen: boolean
+  setMenuIsOpen: (isOpen: boolean) => void
+}
+
+const Header: React.FC<headerProps> = (props: {
+  menuIsOpen: boolean
+  setMenuIsOpen: (isOpen: boolean) => void
+}) => {
+
   return (
     <header className={Style.header}>
       <div className={Style.header_container}>
@@ -29,7 +39,8 @@ const Header: React.FC = () => {
           </Link>
         </nav>
 
-        <CartIcon />
+        <CartIcon setMenuIsOpen={props.setMenuIsOpen} />
+        { props.menuIsOpen && <Cart /> }
       </div>
     </header>
   )

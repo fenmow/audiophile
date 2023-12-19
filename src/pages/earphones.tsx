@@ -6,6 +6,7 @@ import ProductCard from "@/components/ProductCard/ProductCard";
 import { ProductType, fetchProducts } from "@/services/products";
 import { GetStaticProps, NextPage } from "next";
 import Style from "../styles/ProductsPage.module.scss"
+import { useState } from "react";
 
 export const getStaticProps: GetStaticProps = async () => {
   const products = await fetchProducts()
@@ -17,9 +18,11 @@ export const getStaticProps: GetStaticProps = async () => {
 const Earphones: NextPage = (props: {
   earphones?: ProductType[]
 }) => {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
   return (
     <>
-      <Header />
+      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.title_container}>
         <h1>earphones</h1>
       </div>

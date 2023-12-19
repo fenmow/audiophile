@@ -1,8 +1,14 @@
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
-const CartIcon: React.FC = () => {
+type cartIconProps = {
+  setMenuIsOpen: (isOpen: any) => void
+}
+
+const CartIcon: React.FC<cartIconProps> = (props: {
+  setMenuIsOpen: (isOpen: any) => void
+}) => {
   return (
-    <div className="cart_icon" style={{ color: '#ffff', fontSize: '25px', cursor: 'pointer' }}>
+    <div className="cart_icon" style={{ color: '#ffff', fontSize: '25px', cursor: 'pointer' }} onClick={() => props.setMenuIsOpen((current: any) => !current)}>
       <AiOutlineShoppingCart />
     </div>
   )

@@ -104,10 +104,19 @@
             .input_container {
               width: 100%;
               .message_container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
                 label {
                   font-size: 14px;
                   font-weight: bold;
                   color: #000000;
+                }
+                span {
+                  font-size: 14px;
+                  color: rgb(202, 20, 20);
+                  font-weight: bold;
+                  display: none;
                 }
               }
                 input {
@@ -128,6 +137,18 @@
                     outline: 2px solid #D87D4A;
                   }
                 }
+            }
+
+            .input_container.show_message {
+              .message_container {
+                label, span {
+                  color: rgb(202, 20, 20);
+                  display: block;
+                }
+              }
+              input {
+                border: 1px solid rgb(202, 20, 20);
+              }
             }
             .address_input {
               grid-column: span 2;
@@ -240,6 +261,16 @@
             background-color: #FBAF85;
           }
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .page_container {
+    .checkout_container {
+      .checkout_grid {
+        grid-template-columns: 1fr;
       }
     }
   }

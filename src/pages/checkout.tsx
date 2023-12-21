@@ -9,27 +9,12 @@ import { cartEntry } from "@/components/CartComponent/Cart";
 import Image from "next/image";
 import Footer from "@/components/Footer/Footer";
 import CashImage from "public/checkout/icon-cash-on-delivery.svg"
-
-export const CheckoutCart = (props: {
-  entry: cartEntry
-}) => {
-  return (
-    <div className={Style.product_row}>
-      <div className={Style.product_details}>
-        <Image className={Style.image} src={props.entry.product?.image?.desktop} alt="product" height={60} width={60}></Image>
-        <div className={Style.product_content}>
-          <span className={Style.product_name}>{props.entry.product.name}</span>
-          <span className={Style.product_price}>$ {props.entry.product?.price?.toLocaleString().replace('.', ",")}</span>
-        </div>
-      </div>
-      <div className={Style.product_quantity}>
-        x{ props.entry.quantity }
-      </div>
-    </div>
-  )
-}
+import CheckoutModal from "@/components/CheckoutModal/CheckoutModal";
+import CheckoutCart from "@/components/CheckoutCart/CheckoutCart";
 
 const Checkout: NextPage = () => {
+  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
   const [cartEntries, setCartEntries] = useState<cartEntry[]>([])
   const { cart } = useCart()
@@ -80,7 +65,11 @@ const Checkout: NextPage = () => {
           setEmoneyContainerState(true)
         } else if (!pinRef.current.value.trim().match(/(^\d{4}$)/)) {
           setPinContainerState(true)
-        }  
+        } else {
+        setShowModal(true)
+        }
+      } else {
+        setShowModal(true)
       }
     }
 
@@ -112,10 +101,10 @@ const Checkout: NextPage = () => {
   
   return (
     <>
-      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.header_background}></div>
 
-      <main className={Style.page_container}>
+      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${showModal ? `${Style.cart_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
         <div className={Style.back_link_container}>
           <div className={Style.back_link}>
             <Link href={`/`} legacyBehavior>
@@ -256,8 +245,9 @@ const Checkout: NextPage = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </main>
-      <Footer />
+      <CheckoutModal order={cartEntries} total={cartTotal} showModal={showModal} />
     </>
   )
 }

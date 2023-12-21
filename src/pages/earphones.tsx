@@ -18,24 +18,27 @@ export const getStaticProps: GetStaticProps = async () => {
 const Earphones: NextPage = (props: {
   earphones?: ProductType[]
 }) => {
+  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false)
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
-      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
-      <div className={Style.title_container}>
-        <h1>earphones</h1>
-      </div>
-      <div className={Style.products_container}>
-      { props.earphones?.map((earphone, index) => (
-          <div key={earphone.slug}>
-            <ProductCard product={earphone} index={index} />
-          </div>
-        )) }
-      </div>
-      <CategoryRow />
-      <AudioGear />
-      <Footer />
+      <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
+        <div className={Style.title_container}>
+          <h1>earphones</h1>
+        </div>
+        <div className={Style.products_container}>
+        { props.earphones?.map((earphone, index) => (
+            <div key={earphone.slug}>
+              <ProductCard product={earphone} index={index} />
+            </div>
+          )) }
+        </div>
+        <CategoryRow />
+        <AudioGear />
+        <Footer />
+      </main>
     </>
   )
 }

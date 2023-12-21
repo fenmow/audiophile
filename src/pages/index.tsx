@@ -7,6 +7,7 @@ import ProductLinks from "@/components/ProductLinks/ProductLinks";
 import { ProductType, fetchProducts } from "@/services/products";
 import { GetStaticProps, NextPage } from "next";
 import { useState } from "react";
+import Style from "../styles/Home.module.scss"
 
 export const getStaticProps: GetStaticProps = async () => {
   const products: ProductType[] = await fetchProducts()
@@ -16,6 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 const Home: NextPage = (props: {
   products?: ProductType[]
 }) => {
+  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false)
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   const markTwo = props.products?.find(product => product.slug === 'xx99-mark-two-headphones')
@@ -25,12 +27,14 @@ const Home: NextPage = (props: {
 
   return (
     <>
-      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
       <HomeMainCard productName={markTwo?.name} slug={markTwo?.slug} />
       <CategoryRow />
       <ProductLinks firstProduct={zx9} secondProduct={zx7} thirdProduct={yx1} />
       <AudioGear />
       <Footer />
+      </main>
     </>
   )
 }

@@ -39,13 +39,15 @@ const ProductPage: NextPage<productPageType> = (props: {
 }) => {
   const { addProducts } = useCart()
   const [productsList, setProductsList] = useState<ProductType[]>([props.product!])
+  const [cartIsOpen, setCartIsOpen] = useState<boolean>(false)
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
 
   return (
     <>
-      <Header menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.header_background}></div>
 
+      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
       <div className={Style.back_link_container}>
         <div className={Style.back_link}>
           <Link href={`/${props.product?.category}`} legacyBehavior>
@@ -124,6 +126,7 @@ const ProductPage: NextPage<productPageType> = (props: {
         <AudioGear />
       </div>
       <Footer />
+      </main>
     </>
   )
 }

@@ -1,10 +1,12 @@
-.header {
+.header,
+.menu_is_open {
   width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   background-color: transparent;
   padding: 0 1.75em;
+  z-index: 200;
   .header_container {
     width: 100%;
     max-width: 1200px;
@@ -15,6 +17,11 @@
     align-items: center;
     border-bottom: 2px solid #97979731;
     padding: 1.75em 0;
+    .logo_container {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+    }
     .nav_bar {
       display: flex;
       align-items: center;
@@ -34,6 +41,57 @@
       }
     }
   }
+  .category_row {
+    width: 100%;
+    padding: 8rem 2.25em 3em 2.25em;
+    background-color: #ffffff;
+    border-radius: 0 0 .6em .6em;
+    display: none;
+    .category_container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      .category_link {
+        text-decoration: none;
+        .category_column {
+          position: relative;
+          background-color: #f1f1f1;
+          border-radius: .4em;
+          text-align: center;
+          text-transform: uppercase;
+          padding: 4.75em 1em 1em 1em;
+          .category_image {
+            position: absolute;
+            top: -75px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+          h1 {
+            font-size: 17px;
+            letter-spacing: 1px;
+            color: #000000;
+            margin-bottom: 10px;
+          }
+          p {
+            color: #00000093;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline;
+          }
+        }
+        &:hover p {
+          color: #d87d4a;
+        }
+      }
+    }
+  }
+}
+
+.header.header_cart_is_open {
+  background-color: #000000;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -43,11 +101,15 @@
     top: 0;
     left: 0;
     background-color: transparent;
-    padding: 0 1.75em;
+    padding: 0;
     .header_container {
+      padding: 1.75em;
       .nav_bar {
         display: none;
       }
+    }
+    .category_row {
+      display: block;
     }
   }
 }

@@ -1,0 +1,12 @@
+.bars_icon {
+  color: #ffffff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .bars_icon {
+    display: block;
+  }
+}

@@ -68,7 +68,7 @@
     .product_card {
       grid-template-columns: repeat(1, 1fr);
       .product_content_container {
-        padding: 2em 6em 0 6em;
+        padding: 2em 5em 0 5em;
         text-align: center;
         .product_description {
           max-width: 100%;
@@ -88,7 +88,79 @@
           background-color: #f1f1f1;
           width: 100%;
           .image {
-            object-fit: fill;
+            object-fit: contain;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .product_card_reverse {
+      .image_container {
+        grid-row: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .product_card_container {
+    margin-bottom: 1.5em;
+    .product_card {
+      grid-template-columns: repeat(1, 1fr);
+      .product_content_container {
+        padding: .5em 2em 3em 2em;
+        text-align: center;
+        .is_new_product {
+          text-transform: uppercase;
+          font-size: 15px;
+          font-weight: normal;
+          letter-spacing: 6px;
+          color: #D87D4A;
+        }
+        .product_name {
+          font-size: 2em;
+          line-height: 1em;
+          text-transform: uppercase;
+          margin: 16px 0;
+        }
+        .product_description {
+          color: #000000a9;
+          font-size: 15px;
+          line-height: 1.75em;
+          margin: 4px 0;
+          max-width: 430px;
+        }
+        .product_link {
+          width: 170px;
+          button {
+            border: none;
+            background-color: #D87D4A;
+            color: #ffff;
+            text-transform: uppercase;
+            padding: 1em 1.7em;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 1.5em 0 1.5em 0;
+            transition: .1s;
+            &:hover {
+              background-color: #FBAF85;
+            }
+          }
+        }
+      }
+      .image_container {
+        justify-content: center;
+        picture {
+          display: flex;
+          justify-content: center;
+          border-radius: .6em;
+          background-color: #f1f1f1;
+          width: 100%;
+          .image {
+            object-fit: contain;
             width: 100%;
           }
         }

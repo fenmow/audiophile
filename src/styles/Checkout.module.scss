@@ -270,3 +270,35 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .page_container {
+    padding: 20px 0 0 0;
+    .back_link_container {
+      .back_link {
+        margin: 0 auto 20px auto;
+      }
+    }
+
+    .checkout_container {
+      .checkout_grid {
+        .checkout_main_grid {
+          padding: 1.7em;
+          .input_grid {
+            grid-template-columns: 1fr !important;
+            .address_input {
+              grid-column: 1 !important;
+            }
+          }
+        }
+        .payment_methods_container {
+          grid-template-columns: 1fr !important;
+        }
+      }
+    }
+
+    .summary {
+      padding: 1.3em 1.5em !important;
+    }
+  }
+}

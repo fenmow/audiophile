@@ -72,3 +72,37 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .audio_gear {
+    padding: 4em 1.75em;
+    .audio_gear_container {
+      grid-template-columns: repeat(1, 1fr);
+      .text_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 2em;
+        margin-top: 10px;
+        h1 {
+          font-size: 1.9em;
+          max-width: 100%;
+          span {
+            color: #D87D4A;
+          }
+        }
+        p {
+          color: #000000a2;
+          margin: 25px 0;
+          line-height: 1.6em;
+          font-size: 15px;
+          max-width: 100%;
+        }
+      }
+      .image_container {
+        grid-row: 1;
+      }
+    }
+  }
+}

@@ -1,7 +1,6 @@
 import Image from "next/image"
 import Style from "./ProductLinks.module.scss"
 import SpeakerImage from "public/home/desktop/image-speaker-zx9.png"
-import Zx7Image from "public/home/desktop/image-speaker-zx7.jpg"
 import EarphoneImage from "public/home/desktop/image-earphones-yx1.jpg"
 import { ProductType } from "@/services/products"
 import PatternCircles from "public/home/desktop/pattern-circles.svg"
@@ -34,7 +33,7 @@ const ProductLinks: React.FC<ProductLinkProps> = (props: {
             </Link>
           </div>
         </div>
-        <div className={`${Style.product_row} ${Style.second_product}`} style={{ backgroundImage: `url(${Zx7Image.src})` }}>
+        <div className={`${Style.product_row} ${Style.second_product}`}>
           <div className={Style.text_content}>
             <h1>{props.secondProduct?.name}</h1>
             <Link href={`/${props.secondProduct?.slug.toString()}`}>

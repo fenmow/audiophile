@@ -2,6 +2,7 @@ import Image from "next/image"
 import Style from "./AudioGear.module.scss"
 import GearImage from "public/shared/desktop/image-best-gear.jpg"
 import GearImageTablet from "public/shared/tablet/image-best-gear-tablet.jpg"
+import GearImageMobile from "public/shared/mobile/image-best-gear.jpg"
 
 const AudioGear: React.FC = () => {
   return (
@@ -14,7 +15,8 @@ const AudioGear: React.FC = () => {
         <div className={Style.image_container}>
           <picture>
             <source media="(min-width: 1025px)" srcSet={GearImage.src}/>
-            <Image className={Style.image} src={GearImageTablet.src} alt="gear image" height={350} width={450}></Image>
+            <source media="(min-width: 640px)" srcSet={GearImageTablet.src}/>
+            <Image className={Style.image} src={GearImageMobile.src} alt="gear image" height={350} width={450}></Image>
           </picture>
         </div>
       </div>

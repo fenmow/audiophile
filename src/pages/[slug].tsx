@@ -61,7 +61,8 @@ const ProductPage: NextPage<productPageType> = (props: {
           <div className={Style.image_container}>
             <picture>
               <source media="(min-width: 1024px)" srcSet={props.product?.image?.desktop!}/>
-              <Image className={Style.image} src={props.product?.image?.tablet!} width={500} height={500} alt="product image"></Image>
+              <source media="(min-width: 640px)" srcSet={props.product?.image?.tablet!}/>
+              <Image className={Style.image} src={props.product?.image?.mobile!} width={500} height={500} alt="product image"></Image>
             </picture>
           </div>
           <div className={Style.product_content_container}>
@@ -111,7 +112,9 @@ const ProductPage: NextPage<productPageType> = (props: {
               <div className={Style.others_grid}>
                 { props.product?.others.map(other => (
                   <div className={Style.other} key={other.slug}>
+                    <picture>
                     <Image className={Style.image} src={other.image.desktop} alt={other.name} width={350} height={330}></Image>
+                    </picture>
                     <h1>{other.name}</h1>
                     <Link href={`/${other.slug}`}>
                       <button>see product</button>

@@ -20,7 +20,8 @@ const ProductCard: React.FC<ProductCardProps> = (props: {
           <div className={Style.image_container}>
             <picture>
               <source media="(min-width: 1024px)" srcSet={props.product?.image?.desktop!}/>
-              <Image className={Style.image} src={props.product?.categoryImage?.tablet!} width={500} height={500} alt="product image"></Image>
+              <source media="(min-width: 640px)" srcSet={props.product?.image?.tablet!}/>
+              <Image className={Style.image} src={props.product?.categoryImage?.mobile!} width={500} height={500} alt="product image"></Image>
             </picture>
           </div>
           <div className={Style.product_content_container}>
@@ -48,7 +49,8 @@ const ProductCard: React.FC<ProductCardProps> = (props: {
           <div className={Style.image_container} style={{ justifyContent: 'end' }}>
             <picture>
               <source media="(min-width: 1024px)" srcSet={props.product?.image?.desktop!}/>
-              <Image className={Style.image} src={props.product?.categoryImage?.tablet!} width={500} height={500} alt="product image"></Image>
+              <source media="(min-width: 640px)" srcSet={props.product?.image?.tablet!}/>
+              <Image className={Style.image} src={props.product?.categoryImage?.mobile!} width={500} height={500} alt="product image"></Image>
             </picture>
           </div>
         </div>

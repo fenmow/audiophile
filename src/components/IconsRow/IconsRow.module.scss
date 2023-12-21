@@ -20,3 +20,13 @@
     grid-row: 2;
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .icons_row {
+    font-size: 23px;
+    gap: .6em;
+    grid-column: 1;
+    justify-content: center;
+    grid-row: 3;
+  }
+}

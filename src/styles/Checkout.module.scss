@@ -297,6 +297,13 @@
           grid-template-columns: 1fr !important;
         }
       }
+      .cash_container {
+        flex-direction: column;
+        align-items: start !important;
+        p {
+          font-size: 14px;
+        }
+      }
     }
 
     .summary {

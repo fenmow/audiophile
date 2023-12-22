@@ -39,6 +39,7 @@ const Checkout: NextPage = () => {
   const emoneyRef = useRef<HTMLInputElement>({} as HTMLInputElement)
   const [pinContainerState, setPinContainerState] = useState<boolean>(false)
   const pinRef = useRef<HTMLInputElement>({} as HTMLInputElement)
+  const [showHeader, setShowHeader] = useState<boolean>(true)
 
 
   const validateFormValues = () => {
@@ -67,9 +68,11 @@ const Checkout: NextPage = () => {
           setPinContainerState(true)
         } else {
         setShowModal(true)
+        setShowHeader(false)
         }
       } else {
         setShowModal(true)
+        setShowHeader(false)
       }
     }
 
@@ -101,10 +104,13 @@ const Checkout: NextPage = () => {
   
   return (
     <>
-      <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
+      { showHeader && (
+      <>
+        <Header cartIsOpen={cartIsOpen} setCartIsOpen={setCartIsOpen} menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen} />
       <div className={Style.header_background}></div>
+      </>) }
 
-      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${showModal ? `${Style.cart_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
+      <main className={`${Style.page_container} ${cartIsOpen ? `${Style.cart_is_open}` : ''} ${showModal ? `${Style.modal_is_open}` : ''} ${menuIsOpen ? `${Style.menu_is_open}` : ''}`}>
         <div className={Style.back_link_container}>
           <div className={Style.back_link}>
             <Link href={`/`} legacyBehavior>

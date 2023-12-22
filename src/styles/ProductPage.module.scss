@@ -370,6 +370,7 @@
     }
   
     .product_card_container {
+      padding: 0 1.3em;
       .product_card {
         row-gap: 3em;
         display: flex;
@@ -473,7 +474,7 @@
             }
             h1 {
               font-size: 24px;
-              margin: 18px 0;
+              margin: 12px 0;
             }
             button {
               padding: 1em 1.5em;

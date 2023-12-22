@@ -75,7 +75,7 @@
 
 @media only screen and (max-width: 640px) {
   .audio_gear {
-    padding: 4em 1.75em;
+    padding: 4em 1.3em;
     .audio_gear_container {
       grid-template-columns: repeat(1, 1fr);
       .text_content {
@@ -97,6 +97,7 @@
           margin: 25px 0;
           line-height: 1.6em;
           font-size: 15px;
+          width: 100%;
           max-width: 100%;
         }
       }

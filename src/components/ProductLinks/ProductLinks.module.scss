@@ -170,6 +170,7 @@
           h1 {
             font-size: 3em;
             max-width: 100%;
+            width: 100%;
             text-transform: uppercase;
             line-height: 1em;
             letter-spacing: 2px;
@@ -179,6 +180,7 @@
            font-size: 15px;
            color: #ffffffc6;
            max-width: 100%;
+           width: 100%;
           }
   
           button {
@@ -195,7 +197,7 @@
         background-repeat: no-repeat;
         .text_content {
           h1 {
-            font-size: 1.75em;
+            font-size: 1.6em;
           }
           button {
             padding: 1em 1.5em;
@@ -236,6 +238,7 @@
 
 @media only screen and (max-width: 640px) {
   .product_links {
+    padding: 0 1.3em 3em 1.3em;
     .product_links_container {
       .product_row {
         margin-bottom: 25px;
@@ -259,7 +262,7 @@
         .text_content {
           color: #ffff;
           text-align: center;
-          padding: 2.8em 4em 3em 4em;
+          padding: 2.8em 2em 3em 2em;
           h1 {
             font-size: 2em;
             max-width: 100%;
@@ -288,10 +291,10 @@
         background-repeat: no-repeat;
         .text_content {
           h1 {
-            font-size: 1.5em;
+            font-size: 1.4em;
           }
           button {
-            padding: 1em 1em;
+            padding: 1em .7em;
             letter-spacing: 2px;
             font-size: 12px;
           }

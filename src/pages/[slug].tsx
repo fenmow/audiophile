@@ -124,10 +124,9 @@ const ProductPage: NextPage<productPageType> = (props: {
               </div>
           </div>
         </div>
-        <CategoryRow />
-
-        <AudioGear />
       </div>
+      <CategoryRow />
+      <AudioGear />
       <Footer />
       </main>
     </>

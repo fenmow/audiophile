@@ -105,11 +105,12 @@
 
 @media only screen and (max-width: 640px) {
   .product_card_container {
+    padding: 0 1.2em !important;
     margin-bottom: 1.5em;
     .product_card {
       grid-template-columns: repeat(1, 1fr);
       .product_content_container {
-        padding: .5em 2em 3em 2em;
+        padding: .5em 1em 3em 1em;
         text-align: center;
         .is_new_product {
           text-transform: uppercase;
@@ -122,7 +123,7 @@
           font-size: 2em;
           line-height: 1em;
           text-transform: uppercase;
-          margin: 16px 0;
+          margin: 12px 0 15px 0;
         }
         .product_description {
           color: #000000a9;

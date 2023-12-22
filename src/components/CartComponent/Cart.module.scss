@@ -99,3 +99,12 @@
     }
   }
 }
+
+@media only screen and (max-width: 640px) {
+  .cart_container {
+    padding: 0 1.3em;
+    .cart {
+      padding: 1.1em;
+    }
+  }
+}
